@@ -1,0 +1,23 @@
+log
+---------------------------
+This is the first viable AI version I was able to develop. Before this, I used all the data
+from 2 random players making random moves on the Tic-tac-toe board. I learned that this
+caused there to be too much noise in the data and the AI was not able to single out a single
+move as the right one. Instead for this AI, I only used the data from the final move before
+one of the random players won. From there the AI was able to predict a winning position and 
+make a move that would allow it to win. The problem right now is that it is not able to predict
+when an opponent can make a move that will cause it to lose. That will be the next step for now.
+
+AI outline
+---------------------------
+neural network with 9 input layers, 50 hidden layers and 9 output layers(not including bias units)
+
+training data
+----------------------------
+winx.csv
+winy.csv
+
+weights
+----------------------------
+Theta1win.csv
+Theta2win.csv
