@@ -302,8 +302,7 @@ int main() {
 
 		count++;
 
-		//commented out as i'm only interested in player 2 data for now
-		/*for (int i = 0; i < i1; i++) {
+		for (int i = 0; i < i1; i++) {
 
 			for (int j = 0; j < 9; j++) {
 
@@ -343,9 +342,11 @@ int main() {
 			x << endl;
 			y << endl;
 
-		}*/
+		}
 
-		for (int i = 0; i < i2; i++) {
+		
+		//commented out as i'm only interested in player 1 data for now
+		/*for (int i = 0; i < i2; i++) {
 
 			for (int j = 0; j < 9; j++) {
 
@@ -384,7 +385,7 @@ int main() {
 			}
 			x << endl;
 			y << endl;
-		}
+		}*/
 
 		stat = 0;
 
