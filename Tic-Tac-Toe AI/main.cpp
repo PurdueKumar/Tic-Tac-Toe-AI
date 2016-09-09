@@ -14,10 +14,13 @@ using namespace std;
 
 int main() {
 
+	//seeding time for random number generator
 	srand(time(NULL));
 
+	//initializing game
 	game test;
 
+	//declaring players
 	player * p1 = nullptr;
 	player * p2 = nullptr;
 
@@ -297,13 +300,10 @@ int main() {
 			break;
 		}
 
-
-
-		//cout << "continue? (y/n)" << endl;
-		//std::cin >> cont;
 		count++;
 
-		for (int i = 0; i < i1; i++) {
+		//commented out as i'm only interested in player 2 data for now
+		/*for (int i = 0; i < i1; i++) {
 
 			for (int j = 0; j < 9; j++) {
 
@@ -343,7 +343,7 @@ int main() {
 			x << endl;
 			y << endl;
 
-		}
+		}*/
 
 		for (int i = 0; i < i2; i++) {
 
@@ -412,5 +412,5 @@ int main() {
 
 	delete p1;
 	delete p2;
-	std::system("pause");
+	system("pause");
 }
