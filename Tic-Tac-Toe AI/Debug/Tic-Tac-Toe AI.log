@@ -1,4 +1,9 @@
-﻿  main.cpp
-c:\users\admin\documents\visual studio 2015\projects\tic-tac-toe ai\tic-tac-toe ai\main.cpp(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Tic-Tac-Toe AI.vcxproj -> C:\Users\Admin\Documents\Visual Studio 2015\Projects\Tic-Tac-Toe AI\Debug\Tic-Tac-Toe AI.exe
-  Tic-Tac-Toe AI.vcxproj -> C:\Users\Admin\Documents\Visual Studio 2015\Projects\Tic-Tac-Toe AI\Debug\Tic-Tac-Toe AI.pdb (Partial PDB)
+﻿  rando.cpp
+  main.cpp
+c:\users\admin\documents\github\tic-tac-toe-ai\tic-tac-toe ai\main.cpp(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  human.cpp
+  game.cpp
+  ai.cpp
+  Generating Code...
+  Tic-Tac-Toe AI.vcxproj -> C:\Users\Admin\Documents\GitHub\Tic-Tac-Toe-AI\Debug\Tic-Tac-Toe AI.exe
+  Tic-Tac-Toe AI.vcxproj -> C:\Users\Admin\Documents\GitHub\Tic-Tac-Toe-AI\Debug\Tic-Tac-Toe AI.pdb (Partial PDB)

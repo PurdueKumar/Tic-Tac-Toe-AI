@@ -18,11 +18,8 @@ int main() {
 
 	game test;
 
-	rando r1;
-	rando r2;
-	ai ai1(9,50,9,1);
-	ai ai2(9, 50, 9, 2);
-	human h1;
+	player * p1 = nullptr;
+	player * p2 = nullptr;
 
 	int move1;
 	int move2;
@@ -43,6 +40,10 @@ int main() {
 	int * pMoves;
 	int wingrid[9];
 	int winmove;
+	int type = 0;
+	int loops;
+	bool ai1 = false;
+	bool ai2 = false;
 
 	ofstream x;
 	ofstream y;
@@ -53,8 +54,73 @@ int main() {
 	wy.open("winy.csv");
 	x.open("xdata.csv");
 	y.open("ydata.csv");
+	
+	while (type < 1 || type > 3) {
+	
+		cout << "Enter player 1's type 1.random, 2.AI, 3.human :";
+		cin >> type;
+	
+		switch (type) {
 
-	while (count < 100) {
+		case 1:
+
+			p1 = new rando();
+			break;
+
+		case 2:
+
+			p1 = new ai(9, 50, 9, 1);
+			ai1 = true;
+			break;
+
+		case 3:
+
+			p1 = new human();
+			break;
+
+		default:
+
+			cout << "invalid choice try again" << endl;
+			break;
+
+		}
+
+		cout << "Enter player 2's type 1.random, 2.AI, 3.human :";
+		cin >> type;
+
+
+		switch (type) {
+
+		case 1:
+
+			p2 = new rando();
+			break;
+
+		case 2:
+
+			p2 = new ai(9, 50, 9, 2);
+			ai2 = true;
+			break;
+
+		case 3:
+
+			p2 = new human();
+			break;
+
+		default:
+
+			cout << "invalid choice try again" << endl;
+			break;
+
+		}
+
+		cout << "Enter number of games you want to play: ";
+		cin >> loops;
+
+	}
+	
+
+	while (count < loops) {
 
 		test.newGame();
 
@@ -65,7 +131,15 @@ int main() {
 
 			grid = test.copyGrid();
 			pMoves = test.possibleMoves();
-			move1 = h1.move(pMoves, grid);
+			try {
+				move1 = p1->move(pMoves, grid);
+			}
+			catch (exception e) {
+
+				cout << "p1 not initialized" << endl;
+				exit(1);
+
+			};
 			winmove = move1;
 			gameMoves1[i1] = move1;
 
@@ -97,7 +171,15 @@ int main() {
 			grid = test.copyGrid();
 
 			pMoves = test.possibleMoves();
-			move2 = ai2.move(pMoves, grid);
+			try {
+				move2 = p2->move(pMoves, grid);
+			}
+			catch (exception e) {
+
+				cout << "p2 not initialized" << endl;
+				exit(1);
+
+			};
 			winmove = move2;
 			test.getMoves(move2, 2);
 			gameMoves2[i2] = move2;
@@ -315,6 +397,20 @@ int main() {
 	cout << "player1 won: " << p1w << " times" << endl;
 	cout << "player2 won: " << p2w << " times" << endl;
 	cout << "draw: " << draw << " times" << endl;
-	ai1.printr();
+	if (ai1) {
+
+		cout << "player 1 AI: ";
+		((ai *)p1)->printr();
+
+	}
+	if (ai2) {
+		
+		cout << "player 2 AI: ";
+		((ai *)p2)->printr();
+
+	}
+
+	delete p1;
+	delete p2;
 	std::system("pause");
 }

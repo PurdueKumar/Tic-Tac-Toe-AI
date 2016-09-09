@@ -157,7 +157,7 @@ void ai::multiply(double * a, double * b, double * c , int m , int k , int n) {
 
 void ai::printr() {
 
-	cout << "number of random moves: " << this->rcount << endl;
+	cout << "number of random AI moves: " << this->rcount << endl;
 }
 
 ai::~ai() {

@@ -6,6 +6,5 @@ class player {
 
 public:
 	virtual int move(int * , int *) = 0;
-	void printMoves(int *);
 
 };
